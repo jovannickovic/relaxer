@@ -1,27 +1,27 @@
-const container = document.querySelector('.container');
+const circleContainer = document.querySelector('.circle-container');
 const pointerContainer = document.querySelector('.pointer-container');
 const text = document.querySelector('p');
 
-// Breathing technique
-const totalTime = 7500;
-const holdTime = totalTime / 5;
-const breatheTime = holdTime * 2;
+// 4-7-8 Breathing technique
+const totalTime = 19000;
+const holdTime = 7000;
+const breatheTime = 4000;
 
 const breathe = () => {
-    text.innerText = 'Breathe In!';
-    container.className = 'container grow';
+    text.innerText = "Breathe in through the nose!";
+    circleContainer.className = "circle-container grow";
 
     setTimeout(() => {
-        text.innerText = 'Hold.';
+        text.innerText = "Hold the breath.";
 
         setTimeout(() => {
-            text.innerText = 'Breathe Out!';
-            container.className = 'container shrink';
+            text.innerText = "Exhale through the mouth!";
+            circleContainer.className = 'circle-container shrink';
         }, holdTime);
     }, breatheTime);
 }
 
-container.addEventListener('click', () => {
+circleContainer.addEventListener('click', () => {
     if (pointerContainer.className !== 'pointer-container start') {
         pointerContainer.className = 'pointer-container start';
 

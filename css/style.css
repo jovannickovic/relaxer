@@ -17,29 +17,28 @@ body {
 }
 
 h1 {
-  font-size: 2.7rem;
   letter-spacing: 5px;
   text-transform: uppercase;
 }
 
-.container {
+.circle-container {
+  cursor: pointer;
+  height: 230px;
+  width: 230px;
+  margin: auto;
+  position: relative;
+  transform: scale(1);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 240px;
-  width: 240px;
-  margin: auto;
-  cursor: pointer;
-  position: relative;
-  transform: scale(1);
 }
-.container.grow {
-  animation: grow 3s linear forwards;
+.circle-container.grow {
+  animation: grow 4s linear forwards;
 }
-.container.shrink {
-  animation: shrink 3s linear forwards;
+.circle-container.shrink {
+  animation: shrink 8s linear forwards;
 }
-.container .circle {
+.circle-container #circle {
   background-color: #3B2637;
   border-radius: 50%;
   height: 100%;
@@ -49,29 +48,32 @@ h1 {
   left: 0;
   z-index: -1;
 }
-.container .pointer-container {
-  transform-origin: bottom center;
+.circle-container p {
+  font-size: 0.85rem;
+}
+.circle-container .pointer-container {
   height: 150px;
   width: 15px;
+  transform-origin: bottom center;
   position: absolute;
-  top: -30px;
-  left: 112.5px;
+  top: -35px;
+  left: 107.5px;
 }
-.container .pointer-container.start {
-  animation: rotate 7.5s linear forwards infinite;
+.circle-container .pointer-container.start {
+  animation: rotate 19s linear forwards infinite;
 }
-.container .pointer-container .pointer {
+.circle-container .pointer-container #pointer {
   background-color: #FFF;
   border-radius: 50%;
   display: block;
   height: 15px;
   width: 15px;
 }
-.container .gradient-circle {
-  background: conic-gradient(#55B7A4 0%, #4CA493 40%, #FFF 40%, #FFF 60%, #336D62 60%, #2A5B52 100%);
+.circle-container #gradient-circle {
+  background: conic-gradient(#55B7A4 0%, #4CA493 21.0526315789%, #FFF 21.0526315789%, #FFF 57.8947368421%, #336D62 57.8947368421%, #2A5B52 100%);
   border-radius: 50%;
-  height: 260px;
-  width: 260px;
+  height: 250px;
+  width: 250px;
   position: absolute;
   top: -10px;
   left: -10px;
@@ -91,12 +93,12 @@ h1 {
     transform: scale(1);
   }
   to {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 }
 @keyframes shrink {
   from {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
   to {
     transform: scale(1);

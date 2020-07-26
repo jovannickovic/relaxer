@@ -21,29 +21,28 @@ body {
     align-items: center;
 }
 h1 {
-    font-size: 2.7rem;
     letter-spacing: 5px;
     text-transform: uppercase;
 }
-.container {
+.circle-container {
+    cursor: pointer;
+    height: 230px;
+    width: 230px;
+    margin: auto;
+    position: relative;
+    transform: scale(1);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 240px;
-    width: 240px;
-    margin: auto;
-    cursor: pointer;
-    position: relative;
-    transform: scale(1);
 
     &.grow {
-        animation: grow 3s linear forwards;
+        animation: grow 4s linear forwards;
     }
     &.shrink {
-        animation: shrink 3s linear forwards;
+        animation: shrink 8s linear forwards;
     }
 
-    .circle {
+    #circle {
         background-color: #3B2637;
         border-radius: 50%;
         height: 100%;
@@ -53,19 +52,22 @@ h1 {
         left: 0;
         z-index: -1;
     }
+    p {
+        font-size: .85rem;
+    }
     .pointer-container {
-        transform-origin: bottom center;
         height: 150px;
         width: 15px;
+        transform-origin: bottom center;
         position: absolute;
-        top: -30px;
-        left: 112.5px;
+        top: -35px;
+        left: 107.5px;
 
         &.start {
-            animation: rotate 7.5s linear forwards infinite;
+            animation: rotate 19s linear forwards infinite;
         }
 
-        .pointer {
+        #pointer {
             background-color: $primary-color;
             border-radius: 50%;
             display: block;
@@ -73,18 +75,18 @@ h1 {
             width: 15px;
         }
     }
-    .gradient-circle {
+    #gradient-circle {
         background: conic-gradient(
             #55B7A4 0%,
-            #4CA493 40%,
-            $primary-color 40%,
-            $primary-color 60%,
-            #336D62 60%,
+            #4CA493 4 / 19 * 100%,
+            $primary-color 4 / 19 * 100%,
+            $primary-color 11/19 * 100%,
+            #336D62 11 / 19 * 100%,
             #2A5B52 100%
         );
         border-radius: 50%;
-        height: 260px;
-        width: 260px;
+        height: 250px;
+        width: 250px;
         position: absolute;
         top: -10px;
         left: -10px;
@@ -108,12 +110,12 @@ h1 {
         transform: scale(1);
     }
     to {
-        transform: scale(1.1);
+        transform: scale(1.2);
     }
 }
 @keyframes shrink {
     from {
-        transform: scale(1.1);
+        transform: scale(1.2);
     }
     to {
         transform: scale(1);
